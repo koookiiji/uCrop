@@ -311,6 +311,9 @@ public class UCrop {
         public static final String EXTRA_ASPECT_RATIO_OPTIONS = EXTRA_PREFIX + ".AspectRatioOptions";
 
         public static final String EXTRA_UCROP_ROOT_VIEW_BACKGROUND_COLOR = EXTRA_PREFIX + ".UcropRootViewBackgroundColor";
+        private static final String EXTRA_TOOLBAR_FONT_SIZE = EXTRA_PREFIX + ".ToolbarFontSize";
+        private static final String EXTRA_ICON_SIZE = EXTRA_PREFIX + ".IconSize";
+        private static final String EXTRA_TOOLBAR_HEIGHT = EXTRA_PREFIX + ".ToolbarHeight";
 
 
         private final Bundle mOptionBundle;
@@ -323,7 +326,18 @@ public class UCrop {
         public Bundle getOptionBundle() {
             return mOptionBundle;
         }
-
+        public void setToolbarFontSize(int fontSize) {
+            mOptionBundle.putInt(EXTRA_TOOLBAR_FONT_SIZE, fontSize);
+        }
+        // アイコンサイズのセット
+        public void setIconSize(int size) {
+            mOptionBundle.putInt(EXTRA_ICON_SIZE, size);
+        }
+        // ツールバーの高さのセット
+        public void setToolbarHeight(int height) {
+            mOptionBundle.putInt(EXTRA_TOOLBAR_HEIGHT, height);
+        }
+        
         /**
          * Set one of {@link android.graphics.Bitmap.CompressFormat} that will be used to save resulting Bitmap.
          */
